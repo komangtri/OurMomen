@@ -1,0 +1,128 @@
+:root {
+  --pink: #d83af4;
+  --bg: #0a0a0a;
+  --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  min-height: 2000px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/background-1.jpg);
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale();
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  /* background-color: var(--bg); */
+}
+
+.hero h1,
+.hero h4,
+.hero p {
+  text-shadow: var(--shadow);
+}
+
+.hero h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 6rem;
+}
+
+.hero p {
+  font-size: 1.4rem;
+}
+
+.hero h4 {
+  font-size: 1.6rem;
+}
+
+.hero a {
+  color: var(--pink);
+  background-color: white;
+  box-sizing: var(--shadow);
+}
+
+.hero a:hover {
+  color: white;
+  background-color: var(--pink);
+}
+
+.custom-navbar {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(4px);
+  height: 6rem;
+}
+
+.custom-navbar .container .offcanvas {
+  height: 100vh;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .offcanvas-title {
+  font-family: "Sacramento", cursive;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.custom-navbar .nav-link {
+  text-transform: uppercase;
+}
+
+.home {
+  background-image: url(img/bg.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  margin-top: -6rem;
+  padding-top: 15rem;
+}
+
+/* Media Query */
+/* laptop */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 70px;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+  .simply-countdown > .simply-section {
+    padding: 60px;
+    margin: 5px;
+  }
+
+  .custom-navbar .nav-link {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+/* mobile phone */
+@media (max-width: 576px) {
+  html {
+    font-size: 45%;
+  }
+  .simply-countdown > .simply-section {
+    padding: 40px;
+    margin: 3px;
+  }
+}
