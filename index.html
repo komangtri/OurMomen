@@ -71,7 +71,7 @@
           <div class="offcanvas-body">
             <div class="navbar-nav ms-auto">
               <a class="nav-link" href="#home">Home</a>
-              <a class="nav-link" href="#info">Info</a>
+              <a class="nav-link" href="#message">Message</a>
               <a class="nav-link" href="#story">Story</a>
               <a class="nav-link" href="#gallery">Gallery</a>
             </div>
@@ -96,7 +96,7 @@
             <div class="row">
               <div class="col-8 text-end d-flex flex-column justify-content-center">
                   <h3>I Nyoman Gede Tri Sastrawan</h3>
-                  <p>Orang yang suka makan sama meluk pacarnya 😋</p>
+                  <p class="ps-1">Orang yang suka makan sama meluk pacarnya 😋</p>
               </div>
               <div class="col-4">
                 <img src="img/mang3.jpg" alt="" class="img-responsif rounded-circle">
@@ -121,7 +121,7 @@
       </div>
     </section>
 
-    <section id="message" class="message">
+    <section id="message" class="message overflow-hidden ">
         <div class="container h-100">
           <div class="row h-100">
             <div class="col d-flex flex-column justify-content-center align-items-center position-relative ">
@@ -136,6 +136,62 @@
         </div>
     </section>
 
+    <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center ">
+          <div class="col-md-8 col-10 text-center">
+            <span>Bagaimana Pertemuan Kita Bersemi</span>
+            <h2>Our Story</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dolores, vitae iure facere libero blanditiis.</p>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image" style="background-image: url(img/background-2.jpg);"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Pertama Bertemu</h3>
+                    <span>Januari 2017</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, maiores! Sed officiis quibusdam dignissimos commodi.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image" style="background-image: url(img/background-2.jpg);"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Pertama Bertemu</h3>
+                    <span>Januari 2017</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, maiores! Sed officiis quibusdam dignissimos commodi.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="">
+                <div class="timeline-image" style="background-image: url(img/background-2.jpg);"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Pertama Bertemu</h3>
+                    <span>Januari 2017</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, maiores! Sed officiis quibusdam dignissimos commodi.</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 
     <!-- JS -->
@@ -147,8 +203,6 @@
     ></script>
 
     <script>
-
-      event.preventDefault()
 
       simplyCountdown(".simply-countdown", {
         year: 2023, // required
