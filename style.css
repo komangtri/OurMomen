@@ -187,6 +187,17 @@ body {
   transform: rotate(20deg);
 }
 
+.love-right {
+  position: absolute;
+  /* background-color: red; */
+  width: 20%;
+  opacity: 0.2;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  transform: rotate(-20deg);
+}
+
 /* Media Query */
 /* Extra Large */
 @media (max-width: 1200px) {
@@ -243,5 +254,11 @@ body {
     width: 40%;
     bottom: -30px;
     left: -40px;
+  }
+
+  .love-right {
+    width: 40%;
+    bottom: -30px;
+    right: -40px;
   }
 }
