@@ -100,11 +100,12 @@ body {
 }
 
 .home h2,
-.story h2 {
+.story h2,
+.gallery h2 {
   color: var(--pink);
   font-size: 4.5em;
   font-family: "Sacramento", cursive;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
@@ -187,12 +188,14 @@ body {
   z-index: 0;
   transform: rotate(-20deg);
 }
-.story {
+.story,
+.gallery {
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
-.story span {
+.story span,
+.gallery span {
   text-transform: uppercase;
   color: #6666;
   font-size: 0.9em;
@@ -201,7 +204,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.story p {
+.story p,
+.gallery p {
   font-size: 1em;
   font-weight: 300;
 }
@@ -304,6 +308,14 @@ body {
   right: auto;
 }
 
+.gallery {
+  background-color: #fff2ff;
+}
+
+.footer {
+  background-color: #ffffff;
+}
+
 /* Media Query */
 /* Extra Large */
 @media (max-width: 1200px) {
@@ -337,8 +349,25 @@ body {
   }
 
   .timeline li .timeline-panel {
+    width: calc(100% - 200px);
+    float: right;
+  }
+
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
   }
 }
+
 /* tablet */
 @media (max-width: 768px) {
   html {
@@ -353,6 +382,11 @@ body {
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  .timeline li .timeline-image {
+    width: 140px;
+    height: 140px;
   }
 }
 /* mobile phone */
@@ -379,5 +413,23 @@ body {
     width: 40%;
     bottom: -30px;
     right: -40px;
+  }
+
+  .timeline li .timeline-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .timeline li .timeline-panel {
+    width: 65%;
+    transform: translateX(-1rem);
+  }
+
+  .timeline li .timeline-panel::before {
+    top: 30px;
+  }
+
+  .timeline li .timeline-panel::after {
+    top: 30px;
   }
 }
