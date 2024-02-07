@@ -36,7 +36,7 @@
         <h1 class="p-3">Mang Tri & Bernika</h1>
         <p>Akan terus terus terus bertambah ❤️</p>
         <!-- <div class="simply-countdown"></div> -->
-        <a href="#undangan" class="btn btn-lg mt-4">Lihat Momen</a>
+        <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()">Lihat Momen</a>
       </main>
     </section>
 
@@ -290,15 +290,25 @@
       </div>
     </section>
 
-    <footer class="footer text-center">
+    <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <p class="m-auto">❤️Copyright © 2024 ❤️</p>
+          <div class="col text-center ">
+            <small>❤️Copyright © 2024 ❤️</small>
           </div>
         </div>
       </div>
     </footer>
+
+    <div id="audio-container">
+      <audio id="bgm" autoplay loop>
+        <source src="audio/audio.mp3" type="audio/mp3">
+      </audio>
+
+      <div class="audio-icon-wrapper" style="display: none;">
+        <i class="bi bi-disc"></i>
+      </div>
+    </div>
 
     <!-- JS -->
     <script src="countdown/simplyCountdown.min.js"></script>
@@ -311,7 +321,6 @@
 
 
     <script>
-
       simplyCountdown(".simply-countdown", {
         year: 2023, // required
         month: 12, // required
@@ -325,6 +334,60 @@
           seconds: { singular: "detik", plural: "detik" },
         },
       });
+    </script>
+
+    <script>
+      const rootElement = document.querySelector(":root")
+      const audioIconWrapper = document.querySelector(".audio-icon-wrapper")
+      const audioIcon = document.querySelector(".audio-icon-wrapper i")
+      let isPlaying = false
+      const bgm = document.querySelector("#bgm")
+
+
+      function disableScroll(){
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+        
+        window.onscroll = function(){
+          window.scrollTo(scrollTop, scrollLeft)
+        }
+        rootElement.style.scrollBehavior = 'auto'
+      }
+
+      function enableScroll(){
+        window.onscroll = function(){
+        rootElement.style.scrollBehavior = 'smooth'
+        // localStorage.setItem('opened', true)
+        playAudio()  
+        }
+      }
+
+      function playAudio(){
+        
+        bgm.volume = 0.05
+        audioIconWrapper.style.display = "flex"
+        bgm.play()
+        isPlaying = true
+      }
+
+      audioIconWrapper.onclick = function() {
+        if(isPlaying){
+          bgm.pause()
+          audioIcon.classList.remove('bi-disc')
+          audioIcon.classList.add('bi-pause-circle')
+        }else{
+          bgm.play()
+          audioIcon.classList.add('bi-disc')
+          audioIcon.classList.remove('bi-pause-circle')
+        }
+
+        isPlaying = !isPlaying
+      }
+
+      // if(!localStorage.getItem('opened')){
+      // }
+      disableScroll()
+
     </script>
   </body>
 </html>

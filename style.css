@@ -313,7 +313,36 @@ body {
 }
 
 .footer {
-  background-color: #ffffff;
+  background-color: var(--pink);
+  color: #fff;
+}
+
+.audio-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  cursor: pointer;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  animation: rotating 4s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Media Query */
